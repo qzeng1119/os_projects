@@ -1,1 +1,20 @@
-.vocode/
+# --- 忽略 VS Code 配置 ---
+.vscode/
+
+# --- 忽略 Linux 内核编译生成的中间产物 ---
+*.o
+*.ko
+*.mod.c
+*.mod
+*.order
+*.symvers
+.*.cmd
+.tmp_versions/
+
+# --- 忽略可执行文件和目录 ---
+/bin/
+/build/
+
+# --- 忽略日志和备份 ---
+*.log
+*~
