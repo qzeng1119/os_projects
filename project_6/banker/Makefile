@@ -8,5 +8,6 @@ all: $(TARGET)
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
 
+.PHONY: clean
 clean:
-	del /Q $(TARGET).exe 2>NUL || exit 0
+	rm -f $(TARGET)
