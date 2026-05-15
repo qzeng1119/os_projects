@@ -1,5 +1,9 @@
 # Report for Project 1
-报告主要分为三个部分。分别是 *jiffies* 相关代码解释、*seconds* 相关代码解释、对 *bonus* 问题的回答。
+
+**姓名：** 曾清  
+**学号：** 524031910374
+
+报告主要分为三个部分。分别是 *jiffies* 相关代码解释、*seconds* 相关代码解释、对 *bonus* 问题的回答。各模块的测试截图在附录中。
 
 ## 1. Jiffies
 为完成相关任务， 我在 `jiffies_init` 函数（模块入口）和 `jiffies_exit` 函数（模块出口）中分别完成了 *jiffies* 文件的创建和删除。由于这部分代码并不关键，所以不在报告中解释和列出。  
@@ -30,3 +34,21 @@ rv = sprintf(buffer, "%lu seconds has past since the module loaded.\n", (jiffies
 1. **安全边界检查。** `copy_to_user` 会检查目标用户地址的合法性，防止内核空间访问非法用户内存地址导致系统崩溃或安全漏洞。`memcpy` 不做此类检查，假设所有地址都是有效且可访问的。
 2. **处理页缺失。** 当用户空间数据被换出到磁盘时，`copy_to_user` 能够处理这种页缺失异常，并触发页面换入机制；`memcpy` 只能用于内核空间或已驻留内存的用户空间地址，无法处理缺页中断。
 3. **使用场景。** `copy_to_user` 专用于内核模块或系统调用中向用户空间返回数据的场景；`memcpy` 适用于用户空间内部或内核空间内部的内存拷贝。
+
+
+<div style="page-break-after: always;"></div>
+
+
+## Appendix for Test Screenshots
+
+### 1. test for 'simple' module:
+![test for 'simple' module](./test_screenshots/simple.png)
+
+### 2. test for 'hello' module:
+![test for 'hello' module](./test_screenshots/hello.png)
+
+### 3. test for 'jiffies' module:
+![test for 'jiffies' module](./test_screenshots/jiffies.png)
+
+### 4. test for 'seconds' module:
+![test for 'seconds' module](./test_screenshots/seconds.png)

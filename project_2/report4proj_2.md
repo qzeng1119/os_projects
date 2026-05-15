@@ -1,6 +1,9 @@
 # Report for Project 2
 
-报告分为三个部分，分别是 *Unix Shell* 相关代码解释、*`/proc/pid`* 内核模块代码解释、对 *bonus* 问题的回答。
+**姓名：** 曾清  
+**学号：** 524031910374
+
+报告分为三个部分，分别是 *Unix Shell* 相关代码解释、*`/proc/pid`* 内核模块代码解释、对 *bonus* 问题的回答。两个子任务的测试截图在附录中。
 
 ## 1. Unix Shell
 
@@ -59,3 +62,15 @@ copy_to_user(usr_buf, buffer, rv);
 2. **使用范围。** 匿名管道只能用于具有亲缘关系的进程（如父子、兄弟进程）之间，因为文件描述符只能通过 `fork` 继承；命名管道可在任意无亲缘关系的进程间通信，只需双方以路径打开同一 FIFO 文件即可。
 
 3. **通信模型。** 二者均为半双工、基于字节流的单向通信，读写均会阻塞直到对端就绪，本质上共享同一套内核管道机制，差异仅在于寻址方式不同。
+
+
+<div style="page-break-after: always;"></div>
+
+
+## Appendix for Test Screenshots
+
+### 1. test for UnixShell:
+![test for UnixShell](./test_screenshots/UnixShell.png)
+
+### 2. test for pid:
+![test for pid](./test_screenshots/pid.png)

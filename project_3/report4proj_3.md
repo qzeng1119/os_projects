@@ -1,6 +1,9 @@
 # Report for Project 3
 
-报告分为三个部分，分别是*数独校验*、*多线程排序（C）*、*Fork-Join 并行排序（Java）* 的代码解释。
+**姓名：** 曾清  
+**学号：** 524031910374
+
+报告分为三个部分，分别是*数独校验*、*多线程排序（C）*、*Fork-Join 并行排序（Java）* 的代码解释。各子任务的测试截图在附录中。
 
 ## 1. Sudoku Validator
 
@@ -51,3 +54,15 @@ merge(arr, left, mid, right);
 ```
 
 与 QuickSort 不同，MergeSort 的合并步骤必须在两个子任务**全部完成后**串行执行，这是 `invokeAll` 阻塞语义的关键用途所在。
+
+
+<div style="page-break-after: always;"></div>
+
+
+## Appendix for Test Screenshots
+
+### 1. test for sudoku:
+![test for sudoku](./test_screenshots/sudoku.png)
+
+### 2. test for multithread-sorting, MergeSort and QuickSort:
+![test for multithread-sorting, MergeSort and QuickSort](./test_screenshots/sort.png)
